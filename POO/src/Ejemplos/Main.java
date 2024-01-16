@@ -13,18 +13,7 @@ public class Main {
 //		System.out.println(lia.getNombre());
 //		System.out.println(lia.getHambriento());
 //		lia.ladrar();
-//		Bicicleta bicicleta1= new Bicicleta();
-////		bicicleta1.acelerar();
-////		bicicleta1.acelerar();
-////		bicicleta1.acelerar();
-//		bicicleta1.frenar();
-//		bicicleta1.frenar();
-//		bicicleta1.frenar();
-//		bicicleta1.subirMarcha();
-//		bicicleta1.bajarMarcha();
-//		bicicleta1.bajarMarcha();
-//		bicicleta1.bajarMarcha();
-//		bicicleta1.mostrarEstado();
+//		
 //		Libro libro1 = new Libro("11AS888-555","pepe","La cosa",20);
 //		libro1.mostrarEstado();
 //		Libro libro2 = new Libro();

@@ -1,17 +1,17 @@
 package Boletin8_1;
 
 import java.util.Iterator;
-
+//Ejercicio 2:  Implementa una clase Cuadrado, la cual tendrá como atributos: 
+//int lado
+//y como métodos:
+//public Cuadrado()
+//public void setLado(int lado)
+//public int getLado()
+//public int getArea() //Devuelve el área del Cuadrado
+//public void printCuadrado()// Muestra por pantalla un cuadrado dibujado con *, 
+////teniendo en cuenta el valor de su atributo lado
 public class Cuadrado {
-//	Ejercicio 2:  Implementa una clase Cuadrado, la cual tendrá como atributos: 
-//		int lado
-//		y como métodos:
-//		public Cuadrado()
-//		public void setLado(int lado)
-//		public int getLado()
-//		public int getArea() //Devuelve el área del Cuadrado
-//		public void printCuadrado()// Muestra por pantalla un cuadrado dibujado con *, 
-//		//teniendo en cuenta el valor de su atributo lado
+
 	private int lado;
 	public Cuadrado() {
 		this.lado=2;

@@ -1,16 +1,16 @@
 package Boletin8_1;
+//Ejercicio 1:  Implementa una clase Triangulo, la cual tendrá como atributos: 
+//double base
+//double altura
+//y como métodos:
+//public Triangulo()
+//public void setBase(double base)
+//public void setAltura(double altura)
+//public double getBase()
+//public double getAltura()
 
 public class Triangulo {
-//	Ejercicio 1:  Implementa una clase Triangulo, la cual tendrá como atributos: 
-//		double base
-//		double altura
-//		y como métodos:
-//		public Triangulo()
-//		public void setBase(double base)
-//		public void setAltura(double altura)
-//		public double getBase()
-//		public double getAltura()
-	
+
 		private double base;
 		private double altura;
 		

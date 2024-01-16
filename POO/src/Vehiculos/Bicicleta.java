@@ -1,6 +1,7 @@
 package Vehiculos;
 
 public class Bicicleta {
+	private String nombre;
 	private int velocidaActual;
 	private int cadenciaDePedaleoActual;
 	private int marchaActual;
@@ -16,12 +17,24 @@ public class Bicicleta {
 //		this.cadenciaDePedaleoActual=0;
 //		this.marchaActual=1;
 //	}
+	
 	public Bicicleta() {
 		this.velocidaActual=VELOCIDAD_MINIMA;
 
 	}
+	public Bicicleta(int velocidaActual, int cadenciaDePedaleoActual, int marchaActual,String nombre) {
+		this.velocidaActual = velocidaActual;
+		this.cadenciaDePedaleoActual = cadenciaDePedaleoActual;
+		this.marchaActual = marchaActual;
+		this.nombre=nombre;
+	}
 	//getters y setters
-	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	public int getVelocidaActual() {
 		return velocidaActual;
 	}
@@ -62,6 +75,12 @@ public class Bicicleta {
 		if (this.marchaActual>MARCHA_MINIMA) {
 			this.marchaActual--;	
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return "velocidaActual=" + velocidaActual + "\ncadenciaDePedaleoActual=" + cadenciaDePedaleoActual
+				+ "\nmarchaActual=" + marchaActual ;
 	}
 	public void mostrarEstado() {
 		System.out.println("La velocidad actual es: "+this.velocidaActual);
