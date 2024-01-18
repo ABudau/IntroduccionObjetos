@@ -9,6 +9,7 @@ public class Persona {
 	private String apellidos;
 	private int edad;
 	private char sexo;
+	private static int contador=1;
 	
 	
 	public Persona() {
@@ -16,12 +17,14 @@ public class Persona {
 		this.apellidos=null;
 		this.edad=0;
 		this.sexo=0;
+		this.contador++;
 	}
 	public Persona(String n,String a,int e,char s) {
 		this.nombre=n;
 		this.apellidos=a;
 		this.edad=e;
 		this.sexo=s;
+		this.contador++;
 	}
 	public String getNombre() {
 		return nombre;
@@ -49,6 +52,12 @@ public class Persona {
 	}
 	public void setSexo(char sexo) {
 		this.sexo = sexo;
+	}
+	public static int getContador() {
+		return contador;
+	}
+	public static void setContador(int contador) {
+		Persona.contador = contador;
 	}
 	public String saludar() {
 		return "Hola "+getNombre()+" "+getApellidos();

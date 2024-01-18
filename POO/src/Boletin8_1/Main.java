@@ -7,7 +7,8 @@ public class Main {
 	public static void main(String[] args) {
 //		ejercicio1();
 //		ejercicio2();
-		ejercicio3();
+//		ejercicio3();
+		ejercicio4();
 
 	}
 	private static void ejercicio1() {
@@ -33,15 +34,18 @@ public class Main {
 
 	}
 	private static void ejercicio3() {
-		Persona p1=new Persona();
-		Persona p2;
+		
 		String nombre,apellidos;
 		int edad;
 		char sexo;
+		System.out.println("Introduce los datos de la persona "+Persona.getContador());//muestro el contador de cada instancia creada
 		
-		System.out.println("Introduce un nombre");
-		nombre=Teclado.pedirCadena();
-		p1.setNombre(nombre);
+		Persona p1=new Persona();//creo el objeto p1 con el constructor por defecto
+		Persona p2;//Declaro una instancia de la clase Persona
+		
+		System.out.println("Introduce un nombre");//pido datos por teclado
+		nombre=Teclado.pedirCadena();//recojo el dato introducido y lo almaceno en la variable
+		p1.setNombre(nombre);//modifico el valor del atributo nombre del objeto p1
 		
 		System.out.println("Introduce un apellidos");
 		apellidos=Teclado.pedirCadena();
@@ -54,9 +58,34 @@ public class Main {
 		System.out.println("Introduce sexo H/M");
 		sexo=Teclado.pedirChar();
 		
+		System.out.println("Introduce los datos de la persona "+Persona.getContador());//2
+		System.out.println("Introduce un nombre");
+		nombre=Teclado.pedirCadena();
+		
+		System.out.println("Introduce un apellidos");
+		apellidos=Teclado.pedirCadena();
+		
+		System.out.println("Introduce edad");
+		edad=Teclado.pedirNumeroPositivo();
+		
+		System.out.println("Introduce sexo H/M");
+		sexo=Teclado.pedirChar();
+		
+		p2=new Persona(nombre, apellidos, edad, sexo);//creo el objeto p2 con el constructor con parámetros
+		
+		//imprimo y muestro el valor de la llamada del metodo saludar de cada instancia/Objeto creado
 		System.out.println(p1.saludar());
-		
-		
+		System.out.println(p2.saludar());			
 	}
+	private static void ejercicio4() {
+		Piratagochi pirata1=new Piratagochi("Lucas");
+		pirata1.setEnergia(9);
+		pirata1.setNivelFelicidad(4);
+		pirata1.dormir(3);
+		pirata1.comer();
+//		pirata1.jugar(10);
+		System.out.println(pirata1.toString());
+		System.out.println(pirata1.getNecesidades());
 
+	}
 }
