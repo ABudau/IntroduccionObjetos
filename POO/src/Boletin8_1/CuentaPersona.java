@@ -119,10 +119,10 @@ public class CuentaPersona {
 		return  operacionRealizada;//devuelvo el resultado
 	}
 	public double beneficiosFuturos(int numMeses){
-		double interes;
+		double interes=getInteresMensual();
 		double beneficios=0;
 		if (numMeses>0||isDescubierta()==false) {//si el numero de meses es positivo
-			interes=0.01*numMeses;//calculo el interes a aplicar
+			interes*=numMeses;//calculo el interes a aplicar
 			beneficios=getSaldo()*interes;//calculo el beneficio aplicando el interes
 //			beneficios=0;
 			setSaldo(getSaldo()+beneficios);//añado el beneficio
@@ -142,7 +142,7 @@ public class CuentaPersona {
 	
 	@Override
 	public String toString() {
-		return "Cuenta: iban=" + iban + ", numeroCuenta=" + numeroCuenta + "\n"
+		return "Cuenta: \n iban=" + iban + "\n numeroCuenta=" + numeroCuenta + "\n"
 				+ " saldo=" + saldo + "\n"
 				+ " descubierta="+ descubierta + "\n"
 				+ " interesMensual=" + interesMensual ;

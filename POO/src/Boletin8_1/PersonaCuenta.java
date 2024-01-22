@@ -49,7 +49,9 @@ public class PersonaCuenta {
 		return cuentaCorriente;
 	}
 	public void setCuentaCorriente(CuentaPersona cuentaCorriente) {
-		this.cuentaCorriente = cuentaCorriente;
+		if (getCuentaCorriente()==null) {
+			this.cuentaCorriente = cuentaCorriente;
+		}
 	}
 	public String getNombre() {
 		return nombre;
@@ -91,16 +93,58 @@ public class PersonaCuenta {
 	
 	
 	public void crearCuentaCorriente(String iban, int nc, double interesMensual) {
-		this.cuentaCorriente.setIban(iban);
-		this.cuentaCorriente.setNumeroCuenta(nc);
-		this.cuentaCorriente.setInteresMensual(interesMensual);
+		CuentaPersona cuenta = new CuentaPersona(iban, nc, interesMensual);
+		setCuentaCorriente(cuenta);
 	}
 	public boolean sacarDinero(double dinero) {
 		boolean operacionRealizada=false;
-		
-		
+		if (dinero>0) {
+			this.cuentaCorriente.setSaldo(this.cuentaCorriente.getSaldo()-dinero);
+			operacionRealizada=true;
+		}
+		return operacionRealizada;
+	}
+	public boolean ingresarDinero(double cantidad) {
+		boolean operacionRealizada=false;
+		if (cantidad>0) {
+			this.cuentaCorriente.setSaldo(this.cuentaCorriente.getSaldo()+cantidad);
+			operacionRealizada=true;
+		}
 		return operacionRealizada;
 	}
 	
+	public boolean hacerTransfereciaA(PersonaCuenta p, double cantidad) {
+		boolean operacionRealizada=false;
+		if (cantidad>0) {
+			this.cuentaCorriente.setSaldo(this.cuentaCorriente.getSaldo()-cantidad);
+			p.cuentaCorriente.setSaldo(p.cuentaCorriente.getSaldo()+cantidad);
+			operacionRealizada=true;
+		}
+		return operacionRealizada;
+	}
 	
+	public void cerrarCuenta() {
+		
+		if (this.cuentaCorriente.getSaldo()>0) {
+			mostrarMensaje();
+			int opcion=utilidades.Teclado.recogerOpcionMenu(1, 2);
+			if (opcion>1) {
+				this.cuentaCorriente=null;
+			}
+		}else {
+			this.cuentaCorriente=null;
+		}
+
+
+	}
+
+	private void mostrarMensaje() {
+
+		System.out.println("La cuenta tiene un saldo de "+this.cuentaCorriente.getSaldo());
+		System.out.println("¿Está seguro de querer cerrar la cuenta?");
+		System.out.println("1.No \n2.Si");
+		
+	}
+
+
 }

@@ -9,8 +9,8 @@ public class Main {
 //		ejercicio2();
 //		ejercicio3();
 //		ejercicio4();
-		ejercicio5();
-//		ejercicio6();
+//		ejercicio5();
+		ejercicio6();
 
 	}
 	private static void ejercicio1() {
@@ -95,7 +95,6 @@ public class Main {
 
 	}
 	private static void ejercicio5() {
-		// TODO Auto-generated method stub
 		Cuenta c =new Cuenta();
 //		c.isDescubierta();
 		System.out.println(c.isDescubierta());
@@ -104,9 +103,23 @@ public class Main {
 	private static void ejercicio6() {
 //		PersonaCuenta p1 = new PersonaCuenta("pepe", "Perez nieto", 2, 8);
 		PersonaCuenta p1 =new PersonaCuenta("n1", "a1", 18, 'H');
+		PersonaCuenta p2 =new PersonaCuenta("n2", "a2", 18, 'm');
 		p1.crearCuentaCorriente("ES24", 554125282, 2);
-		p1.getCuentaCorriente().getNumeroCuenta();
-		System.out.println(p1.getCuentaCorriente().getNumeroCuenta());
+		p2.crearCuentaCorriente("ES54", 594125282, 2);
+//		CuentaPersona cuenta=new CuentaPersona("ES54", 00557, 0.01);
+//		cuenta.setSaldo(1000);
+		p1.ingresarDinero(1000);
+		p2.ingresarDinero(1000);
+//		cuenta.beneficiosFuturos(12);
+//		System.out.println(p1.getCuentaCorriente());
+//		System.out.println(p1.getCuentaCorriente());
+//		p1.cerrarCuenta();
+		p1.hacerTransfereciaA(p2, 300);
+		System.out.println(p1.getNombre()+" "+p1.getCuentaCorriente());
+		System.out.println(p2.getNombre()+" "+p2.getCuentaCorriente());
+		
+//		System.out.println(cuenta.getNumeroCuenta());
+//		System.out.println("HOLA");
 		
 
 	}
