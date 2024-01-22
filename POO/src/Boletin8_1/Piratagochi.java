@@ -123,18 +123,17 @@ public class Piratagochi {
 	private void condicionalGetHambrientoFalse(int horasJugando) {
 		if (getNivelFelicidad()+horasJugando<=NIVEL_MAXIMO) {//si el nivel de felicidad más las horas jugando es menor o igual al nivel máximo
 			setNivelFelicidad(getNivelFelicidad()+horasJugando);//nivelFelicidad coge el valor de la suma del valor del nivelFelicidad más las horas jugando
-			if (getEnergia()-horasJugando>=NIVEL_MINIMO) {//si el nivel de energia menos las horas jugando es mayor o igual al nivel minimo
-				setEnergia(getEnergia()-horasJugando);//al nivel de energía se le resta el nivel de energía menos las horas jugando
-			}else {//Si no se cumple la condición
-				setEnergia(NIVEL_MINIMO);//se establece el nivel minimo de energía
-			}
+			condicionalEnergiaHorasJugando(horasJugando);
 		}else{///si el nivel de felicidad más las horas jugando es mayor al nivel máximo
 			setNivelFelicidad(NIVEL_MAXIMO);//se establece el nivel de felicidad máximo
-			if (getEnergia()-horasJugando>=NIVEL_MINIMO) {//si el nivel de energia menos las horas jugando es mayor o igual al nivel minimo
-				setEnergia(getEnergia()-horasJugando);//al nivel de energía se le resta el nivel de energía menos las horas jugando
-			}else {//Si no se cumple la condición
-				setEnergia(NIVEL_MINIMO);//se establece el nivel minimo de energía
-			}
+			condicionalEnergiaHorasJugando(horasJugando);
+		}
+	}
+	private void condicionalEnergiaHorasJugando(int horasJugando) {
+		if (getEnergia()-horasJugando>=NIVEL_MINIMO) {//si el nivel de energia menos las horas jugando es mayor o igual al nivel minimo
+			setEnergia(getEnergia()-horasJugando);//al nivel de energía se le resta el nivel de energía menos las horas jugando
+		}else {//Si no se cumple la condición
+			setEnergia(NIVEL_MINIMO);//se establece el nivel minimo de energía
 		}
 	}
 	private void condicionalGetHambrientoTrue(int horasJugando) {
@@ -142,24 +141,28 @@ public class Piratagochi {
 			setNivelFelicidad(getNivelFelicidad()-horasJugando);//asigno a nivel de felicidad el nivel de felicidad menos las horas jugando
 		}else if (getNivelFelicidad()-horasJugando<NIVEL_MINIMO) {//si el nivel de felicidad menos las horas jugando es inferior al nivel mínimo 
 			setNivelFelicidad(NIVEL_MINIMO);//le asigno el nivel de felicidad mínimo
-		}else if (getEnergia()-horasJugando>=NIVEL_MINIMO) {//si el nivel de energia menos las horas jugando es mayor o igual al nivel minimo
-			setEnergia(getEnergia()-horasJugando);//asigno a nivel de energía el valor de la energía menos las horas jugando.
-		}else {//sino
-			setEnergia(NIVEL_MINIMO);//le asigno el nivel mínimo al nivel de energía
-		}
+		} else
+			condicionalEnergiaHorasJugando(horasJugando);
 	}
 	//El método devolverá un String en el que se indicará que es lo que le gustaría hacer al Piratagochi, según su estado (Pensad en las posiblidades). 
 		//Por ejemplo: “¡Lucas quiere jugar! 😺”
 	public String getNecesidades(){
 		String mensaje="";
-		char ico='\u2620';
-		if (getEnergia()>7) {
-//			mensaje="¡"+getNombre()+" quiere jugar! 😺";
-			mensaje="¡"+getNombre()+" quiere jugar!"+ ico;
-		}else if (getEnergia()<5) {
-			mensaje="¡"+getNombre()+"quiere dormir";
+		char ico='\u2602';
+		if (getEnergia()>=5) {
+			mensaje+="¡"+getNombre()+" quiere jugar! 😺\n";//almaceno en la cadena el mensaje
+//			mensaje="¡"+getNombre()+" quiere jugar!"+ ico;
+		}else {
+			mensaje+="¡"+getNombre()+" quiere dormir!  😺\n";//concateno y almaceno en la cadena el mensaje
+//			mensaje+="¡"+getNombre()+" quiere comer!\n";
 		}
-		return mensaje;
+		if (getNivelFelicidad()<5&&getEstaHambriento()==false) {
+			mensaje+="¡"+getNombre()+" quiere jugar para ser feliz!  😺\n";
+		}
+		if (getEstaHambriento()) {
+			mensaje+="¡"+getNombre()+" quiere comer!  😺\n";
+		}
+		return mensaje;//devuelvo el mensaje
 	}
 	@Override
 	public String toString() {
