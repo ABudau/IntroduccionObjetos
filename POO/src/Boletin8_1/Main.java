@@ -101,4 +101,13 @@ public class Main {
 		System.out.println(c.isDescubierta());
 
 	}
+	private static void ejercicio6() {
+//		PersonaCuenta p1 = new PersonaCuenta("pepe", "Perez nieto", 2, 8);
+		PersonaCuenta p1 =new PersonaCuenta("n1", "a1", 18, 'H');
+		p1.crearCuentaCorriente("ES24", 554125282, 2);
+		p1.getCuentaCorriente().getNumeroCuenta();
+		System.out.println(p1.getCuentaCorriente().getNumeroCuenta());
+		
+
+	}
 }
