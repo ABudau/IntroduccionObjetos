@@ -11,6 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
+import java.net.URL;
+
 import javax.swing.SwingConstants;
 
 public class interfaz extends JFrame {
@@ -53,11 +55,22 @@ public class interfaz extends JFrame {
 		lblTituloPrincipal.setBounds(72, 34, 176, 25);
 		contentPane.add(lblTituloPrincipal);
 		
-		JLabel lblImagen = new JLabel("");
-		lblImagen.setHorizontalAlignment(SwingConstants.CENTER);
-		lblImagen.setIcon(new ImageIcon("D:\\Downloads\\img_interfaz\\naruto.gif"));
-		lblImagen.setBounds(57, 70, 215, 147);
-		contentPane.add(lblImagen);
+		URL url = new URL("D:\\Downloads\\img_interfaz\\naruto.gif");
+	    Icon icon = new ImageIcon(url);
+//	    JLabel label = new JLabel(icon);
+		JLabel lblImagen = new JLabel(icon);
+		
+		JFrame f = new JFrame("Animation");
+	    f.getContentPane().add(lblImagen);
+	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    f.pack();
+	    f.setLocationRelativeTo(null);
+	    f.setVisible(true);
+		//
+//		lblImagen.setHorizontalAlignment(SwingConstants.CENTER);
+////		lblImagen.setIcon(new ImageIcon("D:\\Downloads\\img_interfaz\\naruto.gif"));
+//		lblImagen.setBounds(57, 70, 215, 147);
+//		contentPane.add(lblImagen);
 
 		
 		JLabel lblFondo = new JLabel("New label");
