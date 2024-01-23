@@ -93,8 +93,9 @@ public class PersonaCuenta {
 	
 	
 	public void crearCuentaCorriente(String iban, int nc, double interesMensual) {
-		CuentaPersona cuenta = new CuentaPersona(iban, nc, interesMensual);
-		setCuentaCorriente(cuenta);
+//		CuentaPersona cuenta = new CuentaPersona(iban, nc, interesMensual);
+//		setCuentaCorriente(cuenta);
+		setCuentaCorriente(new CuentaPersona(iban, nc, interesMensual));
 	}
 	public boolean sacarDinero(double dinero) {
 		boolean operacionRealizada=false;

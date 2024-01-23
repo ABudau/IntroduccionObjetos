@@ -15,7 +15,8 @@ public class Triangulo {
 		private double altura;
 		
 		public Triangulo() {
-			// TODO Auto-generated constructor stub
+			this.base=1;
+			this.altura=1;
 		}
 
 		public double getBase() {

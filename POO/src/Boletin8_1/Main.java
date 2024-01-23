@@ -9,8 +9,8 @@ public class Main {
 //		ejercicio2();
 //		ejercicio3();
 //		ejercicio4();
-//		ejercicio5();
-		ejercicio6();
+		ejercicio5();
+//		ejercicio6();
 
 	}
 	private static void ejercicio1() {
@@ -84,12 +84,12 @@ public class Main {
 		pirata1.setEnergia(9);
 		pirata1.setNivelFelicidad(4);
 		pirata1.dormir(3);
-		pirata1.comer();
-		pirata1.jugar(6);
-		pirata1.comer();
-//		pirata1.setEstaHambriento(true);
-		pirata1.dormir(2);
-		pirata1.jugar(2);
+//		pirata1.comer();
+//		pirata1.jugar(6);
+//		pirata1.comer();
+		pirata1.setEstaHambriento(false);
+//		pirata1.dormir(2);
+//		pirata1.jugar(2);
 		System.out.println(pirata1.toString());
 		System.out.println(pirata1.getNecesidades());
 
@@ -97,6 +97,8 @@ public class Main {
 	private static void ejercicio5() {
 		Cuenta c =new Cuenta();
 //		c.isDescubierta();
+		c.setSaldo(1000);
+		c.retirar(10000);
 		System.out.println(c.isDescubierta());
 
 	}

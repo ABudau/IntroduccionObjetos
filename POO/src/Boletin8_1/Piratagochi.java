@@ -51,6 +51,10 @@ public class Piratagochi {
 	public int getEnergia() {
 		return energia;
 	}
+	/**
+	 * En este set se controla que el valor que se le pase por párametro sea mayor o igual que el mínimo y menor o igual que el nivel máximo
+	 * @param energia
+	 */
 	public void setEnergia(int energia) {
 		if (energia>=NIVEL_MINIMO&&energia<=NIVEL_MAXIMO) {
 			this.energia = energia;
@@ -113,7 +117,7 @@ public class Piratagochi {
 	 */
 	
 	public void jugar(int horasJugando){
-		if (getEstaHambriento()==false) {//si esta hambriento es false
+		if (!getEstaHambriento()) {//si esta hambriento es false
 			condicionalGetHambrientoFalse(horasJugando);
 			setEstaHambriento(true);
 		}else {//true
@@ -148,15 +152,15 @@ public class Piratagochi {
 		//Por ejemplo: “¡Lucas quiere jugar! 😺”
 	public String getNecesidades(){
 		String mensaje="";
-		char ico='\u2602';
+
 		if (getEnergia()>=5) {
 			mensaje+="¡"+getNombre()+" quiere jugar! 😺\n";//almaceno en la cadena el mensaje
-//			mensaje="¡"+getNombre()+" quiere jugar!"+ ico;
+
 		}else {
 			mensaje+="¡"+getNombre()+" quiere dormir!  😺\n";//concateno y almaceno en la cadena el mensaje
-//			mensaje+="¡"+getNombre()+" quiere comer!\n";
+
 		}
-		if (getNivelFelicidad()<5&&getEstaHambriento()==false) {
+		if (getNivelFelicidad()<5&&!getEstaHambriento()) {
 			mensaje+="¡"+getNombre()+" quiere jugar para ser feliz!  😺\n";
 		}
 		if (getEstaHambriento()) {

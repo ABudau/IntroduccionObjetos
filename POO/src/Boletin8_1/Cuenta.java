@@ -31,7 +31,7 @@ public class Cuenta {
 	private String iban;
 	private int numeroCuenta;
 	private double saldo;
-	private boolean descubierta; //Es derivado
+//	private boolean descubierta; //Es derivado
 	private double interesMensual;
 	
 	public Cuenta() {
@@ -69,18 +69,20 @@ public class Cuenta {
 
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
-		if (this.saldo<0) {//si el saldo es negativo
-			setDescubierta(true);//descubierta toma el valor de true
-		}
+		
 	}
 
 	public boolean isDescubierta() {
+		boolean descubierta=false;
+		if (this.saldo<0) {//si el saldo es negativo
+			descubierta=true;//descubierta toma el valor de true
+		}
 		return descubierta;
 	}
 
-	public void setDescubierta(boolean descubierta) {
-		this.descubierta = descubierta;
-	}
+//	public void setDescubierta(boolean descubierta) {
+//		this.descubierta = descubierta;
+//	}
 
 	public double getInteresMensual() {
 		return interesMensual;
@@ -99,7 +101,7 @@ public class Cuenta {
 	
 	public boolean retirar(double dinero){
 		boolean operacionRealizada=false;
-		if (isDescubierta()==false) {
+		if (comprobarDescubiertaYValor(dinero)) {
 			setSaldo(getSaldo()-dinero);
 			operacionRealizada=true;
 			mostrarSaldo();
@@ -108,7 +110,7 @@ public class Cuenta {
 	}
 	public boolean hacerTransferenciaA(Cuenta c, double cantidad){
 		boolean operacionRealizada=false;
-		if (isDescubierta()==false) {//si descubierta es false
+		if (comprobarDescubiertaYValor(cantidad)) {//si descubierta es false
 //			if (getSaldo()-cantidad>0) {//si el saldo bancario menos la cantidad es mayor que 0
 				setSaldo(getSaldo()-cantidad);//quito del saldo la cantidad
 				c.setSaldo(getSaldo()+cantidad);//añado a la cuenta de destino la cantidad
@@ -118,10 +120,13 @@ public class Cuenta {
 		}
 		return  operacionRealizada;//devuelvo el resultado
 	}
+	private boolean comprobarDescubiertaYValor(double cantidad) {
+		return !isDescubierta()&&cantidad>0;
+	}
 	public double beneficiosFuturos(int numMeses){
 		double interes=getInteresMensual();
 		double beneficios=0;
-		if (numMeses>0||isDescubierta()==false) {//si el numero de meses es positivo
+		if (numMeses>0&&!isDescubierta()) {//si el numero de meses es positivo
 			interes*=numMeses;//calculo el interes a aplicar
 			beneficios=getSaldo()*interes;//calculo el beneficio aplicando el interes
 //			beneficios=0;
@@ -144,7 +149,7 @@ public class Cuenta {
 	public String toString() {
 		return "Cuenta: iban=" + iban + ", numeroCuenta=" + numeroCuenta + "\n"
 				+ " saldo=" + saldo + "\n"
-				+ " descubierta="+ descubierta + "\n"
+				+ " descubierta="+ isDescubierta() + "\n"
 				+ " interesMensual=" + interesMensual ;
 	}
 	
