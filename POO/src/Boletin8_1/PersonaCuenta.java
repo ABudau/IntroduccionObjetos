@@ -97,36 +97,44 @@ public class PersonaCuenta {
 //		setCuentaCorriente(cuenta);
 		setCuentaCorriente(new CuentaPersona(iban, nc, interesMensual));
 	}
+	/**
+	 * 
+	 * @param dinero
+	 * @return
+	 */
 	public boolean sacarDinero(double dinero) {
 		boolean operacionRealizada=false;
-		if (dinero>0) {
-			this.cuentaCorriente.setSaldo(this.cuentaCorriente.getSaldo()-dinero);
+		if (getCuentaCorriente()!=null&&dinero>0) {
+
+			this.cuentaCorriente.retirar(dinero);
 			operacionRealizada=true;
 		}
 		return operacionRealizada;
 	}
 	public boolean ingresarDinero(double cantidad) {
 		boolean operacionRealizada=false;
-		if (cantidad>0) {
-			this.cuentaCorriente.setSaldo(this.cuentaCorriente.getSaldo()+cantidad);
+		if (getCuentaCorriente()!=null&&cantidad>0) {
+			this.cuentaCorriente.ingresar(cantidad);
 			operacionRealizada=true;
 		}
 		return operacionRealizada;
 	}
-	
+
 	public boolean hacerTransfereciaA(PersonaCuenta p, double cantidad) {
 		boolean operacionRealizada=false;
-		if (cantidad>0) {
-			this.cuentaCorriente.setSaldo(this.cuentaCorriente.getSaldo()-cantidad);
-			p.cuentaCorriente.setSaldo(p.cuentaCorriente.getSaldo()+cantidad);
-			operacionRealizada=true;
+		if (p!=null) {
+			if (getCuentaCorriente()!=null&&cantidad>0&&p.getCuentaCorriente()!=null) {
+				getCuentaCorriente().hacerTransferenciaA(p.getCuentaCorriente(), cantidad);
+				operacionRealizada=true;
+			}
 		}
+		
 		return operacionRealizada;
 	}
 	
 	public void cerrarCuenta() {
 		
-		if (this.cuentaCorriente.getSaldo()>0) {
+		if (getCuentaCorriente()!=null&&getCuentaCorriente().getSaldo()>0) {
 			mostrarMensaje();
 			int opcion=utilidades.Teclado.recogerOpcionMenu(1, 2);
 			if (opcion>1) {
