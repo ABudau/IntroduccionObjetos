@@ -55,13 +55,13 @@ public class interfaz extends JFrame {
 		lblTituloPrincipal.setBounds(72, 34, 176, 25);
 		contentPane.add(lblTituloPrincipal);
 		
-		URL url = new URL("D:\\Downloads\\img_interfaz\\naruto.gif");
-	    Icon icon = new ImageIcon(url);
+//		URL url = new URL("D:\\Downloads\\img_interfaz\\naruto.gif");
+//	    Icon icon = new ImageIcon(url);
 //	    JLabel label = new JLabel(icon);
-		JLabel lblImagen = new JLabel(icon);
+//		JLabel lblImagen = new JLabel(icon);
 		
 		JFrame f = new JFrame("Animation");
-	    f.getContentPane().add(lblImagen);
+//	    f.getContentPane().add(lblImagen);
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.pack();
 	    f.setLocationRelativeTo(null);

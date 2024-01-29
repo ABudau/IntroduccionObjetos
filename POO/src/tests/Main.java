@@ -14,7 +14,7 @@ public class Main {
 		Persona persona=new Persona("Pepe",null);
 		perro1.setJuguete(jugetePlastico);
 //		persona.setPerros(perro1);
-		persona.setPerros(perro1);
+//		persona.setPerros(perro1);
 //		System.out.println(p1);
 		jugueteFavoritoDelPerro(persona);
 	}
