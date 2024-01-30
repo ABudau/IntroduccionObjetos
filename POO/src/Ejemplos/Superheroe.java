@@ -17,6 +17,16 @@ public class Superheroe extends Persona {
 	public void setPoder(String poder) {
 		this.poder = poder;
 	}
+
+//	@Override
+//	public String getNombre() {
+//		return "identidad secreta";
+//	}
+	
+	@Override
+	public String toString() {
+		return "Superheroe [poder=" + poder + "]";
+	}
 	
 	
 	

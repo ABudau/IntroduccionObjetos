@@ -43,9 +43,13 @@ public class Main {
 		System.out.println("Su nombre "+cristian.getNombre());
 		
 		
-		Superheroe spiderman=new Superheroe("Peter",null,"...");
-		System.out.println("El nombre del heroe es"+spiderman.getNombre());
+		Superheroe ironMan=new Superheroe("Tony",null,"...");
+		System.out.println("El nombre del heroe es "+ironMan.getNombre());
 		
+		SuperheroeConIdentidadSecreta spiderman=new SuperheroeConIdentidadSecreta("Peter",null,"...");
+		System.out.println("El nombre del heroe es "+spiderman.getNombre());
+		
+		//		Moto miMoto=new Moto("1234EEE", "HONDA", null, null, 55,5, 190);
 	}
 
 }
