@@ -24,19 +24,28 @@ public class Main {
 //		perraDeAnton.setColor("naranja");
 //		System.out.println(clonDeLia.getColor());
 //		System.out.println(perraDeAnton);
-		Cubo cubo1 =new Cubo("plastico", false, "gris", 10, 4);
-		cubo1.pintar();
-		cubo1.llenar(2);
-		System.out.println();
-		cubo1.pintar();
-		cubo1.vaciar(8);
-		System.out.println();
-		cubo1.pintar();
-		cubo1.llenar(20);
-		System.out.println();
-		cubo1.pintar();
+//		Cubo cubo1 =new Cubo("plastico", false, "gris", 10, 4);
+//		cubo1.pintar();
+//		cubo1.llenar(2);
+//		System.out.println();
+//		cubo1.pintar();
+//		cubo1.vaciar(8);
+//		System.out.println();
+//		cubo1.pintar();
+//		cubo1.llenar(20);
+//		System.out.println();
+//		cubo1.pintar();
 //		System.out.println(cubo1.pintaLinea(1));
 //		System.out.println(cubo1.pintaLinea(2));
+		
+		
+		Persona cristian=new Persona("Cristian", null);
+		System.out.println("Su nombre "+cristian.getNombre());
+		
+		
+		Superheroe spiderman=new Superheroe("Peter",null,"...");
+		System.out.println("El nombre del heroe es"+spiderman.getNombre());
+		
 	}
 
 }

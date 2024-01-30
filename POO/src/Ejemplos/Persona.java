@@ -12,7 +12,7 @@ public class Persona {
 //	private String dni;
 //	public static final double ESTATURA_IDEAL=1.50;
 
-public Persona(LocalDate fechaNacimiento,String nombre) {
+public Persona(String nombre,LocalDate fechaNacimiento) {
 	this.fechaNacimiento=fechaNacimiento;
 	this.nombre=nombre;
 }
