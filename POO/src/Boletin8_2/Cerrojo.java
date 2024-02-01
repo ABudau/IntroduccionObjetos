@@ -23,7 +23,7 @@ public class Cerrojo {
 
 
 
-	public int getCombinacion() {//cambiar a private TODO
+	private int getCombinacion() {
 		return combinacion;
 	}
 
