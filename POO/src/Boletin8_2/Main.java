@@ -12,7 +12,8 @@ public class Main {
 //		ejercicio1();
 //		ejercicio2();
 //		ejercicio3();
-		ejercicio8();
+		ejercicio6();
+//		ejercicio8();
 
 	}
 	
@@ -53,6 +54,57 @@ public class Main {
 		
 	}
 	
+	
+	private static void ejercicio6() {
+		Entrenador e1=new Entrenador(1215, Nacionalidad.ESP);
+		Entrenador e2=new Entrenador(00124, Nacionalidad.GBR);
+		
+		Saltador s1=new Saltador("Pepe", "Alvarez", Nacionalidad.ESP, 0, e2);
+		Saltador s2=new Saltador("Luis", "Mendoza", Nacionalidad.PRT, 0, e1);
+		
+		Saltos[] saltos = rellenarSaltosAleatorio();
+		Saltos[] saltos1 = rellenarSaltosAleatorio();
+		s1.setSaltos(saltos);
+		s2.setSaltos(saltos1);
+		
+		System.out.println(s1.toString());
+		System.out.println(s2.toString());
+		
+		s1.setTotalPuntosCompeticion(s1.calcularPuntos());
+		s2.setTotalPuntosCompeticion(s2.calcularPuntos());
+		System.out.println(s1.getTotalPuntosCompeticion());
+		System.out.println(s2.getTotalPuntosCompeticion());
+		
+		System.out.println(s1.toString());
+		System.out.println(s2.toString());
+		
+//		Saltador.cambiarEntrenador(s1, s2);
+//		System.out.println("CAMbio");
+		
+//		System.out.println(s1.toString());
+//		System.out.println(s2.toString());
+	}
+
+	private static Saltos[] rellenarSaltosAleatorio() {
+		Saltos saltos[]=new Saltos[5];
+
+		for (int i = 0; i < saltos.length; i++) {
+			
+			saltos[i]=new Saltos();
+		}
+//		Saltos salto1=new Saltos();
+//		Saltos salto2=new Saltos();
+//		Saltos salto3=new Saltos();
+//		Saltos salto4=new Saltos();
+//		Saltos salto5=new Saltos();
+//		
+//		saltos[0]=salto1;
+//		saltos[1]=salto2;
+//		saltos[2]=salto3;
+//		saltos[3]=salto4;
+//		saltos[4]=salto5;
+		return saltos;
+	}
 	private static void ejercicio8() {
 		Inquilino i1=new Inquilino("Pepe pepito", "12345687q");
 		Inquilino i2=new Inquilino("Manoli manolita", "859746225f");
