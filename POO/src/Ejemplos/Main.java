@@ -1,6 +1,8 @@
 package Ejemplos;
 
 import Vehiculos.Bicicleta;
+import modelo.Atleta;
+import modelo.Karateka;
 
 public class Main {
 
@@ -38,18 +40,32 @@ public class Main {
 //		System.out.println(cubo1.pintaLinea(1));
 //		System.out.println(cubo1.pintaLinea(2));
 		
-		
-		Persona cristian=new Persona("Cristian", null);
-		System.out.println("Su nombre "+cristian.getNombre());
-		
-		
-		Superheroe ironMan=new Superheroe("Tony",null,"...");
-		System.out.println("El nombre del heroe es "+ironMan.getNombre());
-		
-		SuperheroeConIdentidadSecreta spiderman=new SuperheroeConIdentidadSecreta("Peter",null,"...");
-		System.out.println("El nombre del heroe es "+spiderman.getNombre());
+//		
+//		modelo.Persona cristian=new modelo.Persona("Cristian", null);
+//		System.out.println("Su nombre "+cristian.getNombre());
+//		
+//		
+//		Superheroe ironMan=new Superheroe("Tony",null,"...");
+//		System.out.println("El nombre del heroe es "+ironMan.getNombre());
+//		
+//		SuperheroeConIdentidadSecreta spiderman=new SuperheroeConIdentidadSecreta("Peter",null,"...");
+//		System.out.println("El nombre del heroe es "+spiderman.getNombre());
 		
 		//		Moto miMoto=new Moto("1234EEE", "HONDA", null, null, 55,5, 190);
+		
+		Atleta a1 =new Atleta("Atleta", 19);
+		Karateka k1= new Karateka("Karateka", 17);
+		atletaRelizaAccion(k1);
+		System.out.println("*********");
+		atletaRelizaAccion(a1);
+//		a1=k1;
+//		a1.accion();
+		
+		
+	}
+	private static void atletaRelizaAccion(Atleta a1) {
+		System.err.println(a1.getNombre());
+		a1.accion();
 	}
 
 }

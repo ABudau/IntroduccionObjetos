@@ -58,25 +58,45 @@ public class Main {
 	private static void ejercicio6() {
 		Entrenador e1=new Entrenador(1215, Nacionalidad.ESP);
 		Entrenador e2=new Entrenador(00124, Nacionalidad.GBR);
+		Entrenador e3=new Entrenador(001212, Nacionalidad.USA);
 		
-		Saltador s1=new Saltador("Pepe", "Alvarez", Nacionalidad.ESP, 0, e2);
-		Saltador s2=new Saltador("Luis", "Mendoza", Nacionalidad.PRT, 0, e1);
+	
+		
 		
 		Saltos[] saltos = rellenarSaltosAleatorio();
 		Saltos[] saltos1 = rellenarSaltosAleatorio();
+		Saltos[] saltos2 = rellenarSaltosAleatorio();
+		Saltos[] saltos3 = rellenarSaltosAleatorio();
+		
+		Saltador s1=new Saltador("Pepe", "Alvarez", Nacionalidad.ESP, 0, e2);
+		Saltador s2=new Saltador("Luis", "Mendoza", Nacionalidad.PRT, 0, e1);
+		Saltador s3=new Saltador("Fran", "Jimenez", Nacionalidad.GBR, 0, e3);
+		Saltador s4=new Saltador("Alvaro", "Perez", Nacionalidad.USA, 0, e1);
+		
 		s1.setSaltos(saltos);
 		s2.setSaltos(saltos1);
+		s3.setSaltos(saltos2);
+		s4.setSaltos(saltos3);
 		
 		System.out.println(s1.toString());
 		System.out.println(s2.toString());
+		System.out.println(s3.toString());
+		System.out.println(s4.toString());
 		
 		s1.setTotalPuntosCompeticion(s1.calcularPuntos());
 		s2.setTotalPuntosCompeticion(s2.calcularPuntos());
+		s3.setTotalPuntosCompeticion(s3.calcularPuntos());
+		s4.setTotalPuntosCompeticion(s4.calcularPuntos());
+		
 		System.out.println(s1.getTotalPuntosCompeticion());
 		System.out.println(s2.getTotalPuntosCompeticion());
+		System.out.println(s3.getTotalPuntosCompeticion());
+		System.out.println(s4.getTotalPuntosCompeticion());
 		
 		System.out.println(s1.toString());
 		System.out.println(s2.toString());
+		System.out.println(s3.toString());
+		System.out.println(s4.toString());
 		
 //		Saltador.cambiarEntrenador(s1, s2);
 //		System.out.println("CAMbio");

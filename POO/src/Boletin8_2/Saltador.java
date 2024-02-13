@@ -10,20 +10,21 @@ public class Saltador {
 	private Nacionalidad nacionalidad;
 	private double totalPuntosCompeticion;
 	private Entrenador datosEntrenador;
-	private Saltos [] saltos;
+	public static Saltos [] saltos;
+//	public static Saltador getSaltosSaltador();
 	
 	
 	
 	
-	public Saltador(String nombre, String apellidos, Nacionalidad nacionalidad, double totalPuntosCompeticion,
-			Entrenador datosEntrenador) {
-		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.nacionalidad = nacionalidad;
-		this.totalPuntosCompeticion = totalPuntosCompeticion;
-		this.datosEntrenador = datosEntrenador;
-	}
+//	public Saltador(String nombre, String apellidos, Nacionalidad nacionalidad, double totalPuntosCompeticion,
+//			Entrenador datosEntrenador) {
+//		super();
+//		this.nombre = nombre;
+//		this.apellidos = apellidos;
+//		this.nacionalidad = nacionalidad;
+//		this.totalPuntosCompeticion = totalPuntosCompeticion;
+//		this.datosEntrenador = datosEntrenador;
+//	}
 
 
 	@Override
@@ -38,6 +39,18 @@ public class Saltador {
 		return Objects.equals(apellidos, other.apellidos) && nacionalidad == other.nacionalidad
 				&& Objects.equals(nombre, other.nombre);
 	}
+
+
+
+	public Saltador(String nombre, String apellidos, Nacionalidad nacionalidad, double totalPuntosCompeticion,
+		Entrenador datosEntrenador) {
+	super();
+	this.nombre = nombre;
+	this.apellidos = apellidos;
+	this.nacionalidad = nacionalidad;
+	this.totalPuntosCompeticion = totalPuntosCompeticion;
+	this.datosEntrenador = datosEntrenador;
+}
 
 
 
@@ -78,7 +91,7 @@ public class Saltador {
 	}
 	
 	
-	public Saltos[] getSaltos() {
+	public static Saltos[] getSaltos() {
 		return saltos;
 	}
 
@@ -135,7 +148,6 @@ public class Saltador {
 		saltoAux.setVotacionJurado(10);
 		 int posicion=0;
 //		
-		 
 		for (int i=0 ; i < saltos.length; i++) {
 			
 			if (saltos[i]!=null) {
@@ -186,9 +198,6 @@ public class Saltador {
 
 
 
-
-
-
 	/**
 	 * Método que cambia el entrenador del primer saltador por el del segundo saltador
 	 * @param s1 es el salatador que intercambiará su entrenado con el saltador s2
@@ -202,6 +211,23 @@ public class Saltador {
 		s1.setDatosEntrenador(s2.getDatosEntrenador());
 		s2.setDatosEntrenador(entrenadorAux);
 		
+		
+	}
+	
+	public static Saltador saltadorConMasPuntuacion() {
+		Saltador s1=new Saltador(null, null, null, 0, null);
+		Saltos salto1=new Saltos();
+		salto1.setVotacionJurado(0);		
+		
+		for (int i = 0; i < saltos.length; i++) {
+			if (Saltador.getSaltos()[i]!=null) {
+				if (Saltador.getSaltos()[i].getVotacionJurado()>=salto1.getVotacionJurado()) {
+					
+				}
+			}
+		}
+		
+		return s1;
 		
 	}
 	

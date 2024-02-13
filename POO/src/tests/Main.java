@@ -1,9 +1,9 @@
 package tests;
 
-import Modelo.Persona;
-import Modelo.Color;
-import Modelo.Juguete;
-import Modelo.Perro;
+import modelo.Color;
+import modelo.Juguete;
+import modelo.Perro;
+import modelo.Persona;
 
 public class Main {
 
