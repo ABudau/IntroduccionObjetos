@@ -9,13 +9,30 @@ public abstract class Reloj {
 	private int minutos;
 	private int hora;
 	private boolean alarma;
+	private LocalTime horaAlarma;
 	
+	public LocalTime getHoraAlarma() {
+		return horaAlarma;
+	}
+
+	public void setHoraAlarma(LocalTime horaAlarma) {
+		this.horaAlarma = horaAlarma;
+	}
+
 	public Reloj() {
 		super();
 		this.reloj = LocalTime.now();
 		this.minutos =reloj.getMinute();
 		this.hora = reloj.getHour();
 		this.alarma=false;
+	}
+
+	public LocalTime getReloj() {
+		return reloj;
+	}
+
+	public boolean isAlarma() {
+		return alarma;
 	}
 
 	public int getMinutos() {
@@ -40,22 +57,25 @@ public abstract class Reloj {
 		
 	}
 	
-	private void activarAlarma() {
+	public void activarAlarma() {
 		this.alarma=true;
 
 	} 
-	private void desactivarAlarma() {
+	public void desactivarAlarma() {
 		this.alarma=false;
 
 	}
-	private LocalTime establecerAlarma(int hora,int minutos) {
-		LocalTime horaAlarma = null;
+	/**
+	 * Método que estable una alarma 
+	 * @param hora es la hora a la que se desea poner la alarma
+	 * @param minutos son los minutos que se desea poner la alarma
+	 */ 
+	protected void establecerAlarma(int hora,int minutos) {
+
 		if (hora>=0&&hora<24&&minutos>0&&minutos<60) {
-			horaAlarma=LocalTime.of(hora, minutos);
+			this.horaAlarma=LocalTime.of(hora, minutos);
 			activarAlarma();
 		}
-		return horaAlarma;
-
 	}
 	abstract public void mostrarHora();
 	
