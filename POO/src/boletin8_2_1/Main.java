@@ -1,5 +1,6 @@
 package boletin8_2_1;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -7,7 +8,8 @@ public class Main {
 
 	public static void main(String[] args) {
 //		ejercicio1();
-		ejercicio2();
+//		ejercicio2();
+		ejercicio3();
 	}
 	
 	
@@ -51,11 +53,20 @@ public class Main {
 		f12[6]=c2;
 		f12[7]=c3;
 		f12[8]=c4;
-		f12[9]=c5;
+//		f12[9]=c5;
 		Figuras.setFigura(f12);
 		
 		System.out.println(Figuras.figuraConMasArea());
 		
+	}
+	private static void ejercicio3() {
+		Cliente c1= new Cliente("PEPE", "PEREZ", LocalDate.now(), "123455687H");
+		Pelicula p1=new Pelicula("pelicula1", 10, null, Categoria.ACCION);
+		Alquiler a1=new Alquiler(c1, p1, LocalDate.now());
+		
+		System.out.println(a1);
+		
+
 	}
 
 }
