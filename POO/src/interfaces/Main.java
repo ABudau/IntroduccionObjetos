@@ -32,7 +32,13 @@ public class Main {
 		
 		for (IVehiculo iVehiculo : camiones) {
 			if (iVehiculo!=null) {
+				iVehiculo.acelerar();
+				iVehiculo.arrancar();
+				
 				System.out.println(iVehiculo);
+				iVehiculo.parar();
+				System.out.println(iVehiculo);
+				System.out.println();
 			}
 			
 		}
