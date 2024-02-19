@@ -7,6 +7,14 @@ public class Fijo extends Trabajador {
 	}
 
 	
+	public Fijo(Fijo f) {
+		super(f.getDni(), f.getNombre(), f.getSueldoBruto(), f.getRetenciones());
+		
+	}
+
+
+
+
 
 	@Override
 	public double cobrar() {

@@ -15,6 +15,14 @@ public abstract class Trabajador {
 		setSueldoBruto(sueldoBruto);
 		setRetenciones(retenciones);
 	}
+	
+
+	public Trabajador(Trabajador t) {
+		this.dni = t.getDni();
+		this.Nombre = t.getNombre();
+		this.sueldoBruto = t.getSueldoBruto();
+		this.retenciones = t.getRetenciones();
+	}
 
 
 	public String getDni() {
