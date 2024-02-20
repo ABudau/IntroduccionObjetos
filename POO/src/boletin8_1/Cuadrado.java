@@ -1,4 +1,4 @@
-package Boletin8_1;
+package boletin8_1;
 
 import java.util.Iterator;
 //Ejercicio 2:  Implementa una clase Cuadrado, la cual tendrá como atributos: 

@@ -1,4 +1,4 @@
-package Boletin8_1;
+package boletin8_1;
 //Ejercicio 1:  Implementa una clase Triangulo, la cual tendrá como atributos: 
 //double base
 //double altura

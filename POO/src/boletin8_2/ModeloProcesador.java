@@ -1,4 +1,4 @@
-package Boletin8_2;
+package boletin8_2;
 
 public enum ModeloProcesador {
 	INTEL_CORE_I9,INTEL_CORE_I7,INTEL_CORE_I5,INTEL_CORE_I3,INTEL_XEON,INTEL_PENTIUM,INTEL_CELERON,

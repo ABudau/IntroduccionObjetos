@@ -1,4 +1,4 @@
-package Boletin8_1;
+package boletin8_1;
 //Ejercicio 5:  Escribe una clase llamada Cuenta, y otra clase que haga uso de dicha clase pidiendo los datos de varias cuentas y creando dichas cuentas
 //
 //Class Cuenta

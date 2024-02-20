@@ -1,4 +1,4 @@
-package Boletin8_2;
+package boletin8_2;
 //Ejercicio 2:  Estudiar e implementar una clase Ordenador. Estamos interesados en: 
 //El tamaño, tipo y velocidad de su memoria.
 //Tamaño y tipo del disco duro. 

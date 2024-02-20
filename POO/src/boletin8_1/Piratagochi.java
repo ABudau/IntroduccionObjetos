@@ -1,6 +1,6 @@
-package Boletin8_1;
+package boletin8_1;
 
-import Vehiculos.Teclado;
+import vehiculos.Teclado;
 
 /*Ejercicio 4 (Opcional):  Implementa la clase Piratagochi (copia pirata de Tamagochi) 
 con los siguientes atributos: 

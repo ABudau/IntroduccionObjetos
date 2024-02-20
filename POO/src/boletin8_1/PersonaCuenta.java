@@ -1,4 +1,4 @@
-package Boletin8_1;
+package boletin8_1;
 //Ejercicio 6: Aprovechando la clase persona que hemos desarrollado en el ejercicio3,
 //vamos a modificarla para que una persona tenga asociada una cuenta corriente del ejercicio 3. 
 //Cread otro proyecto nuevo para este ejercicio, copiad la clase Persona y la clase Cuenta y a partir

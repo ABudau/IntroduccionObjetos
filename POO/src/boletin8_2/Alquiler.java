@@ -1,4 +1,4 @@
-package Boletin8_2;
+package boletin8_2;
 
 import java.time.LocalDate;
 

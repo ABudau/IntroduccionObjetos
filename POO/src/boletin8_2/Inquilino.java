@@ -1,4 +1,4 @@
-package Boletin8_2;
+package boletin8_2;
 
 public class Inquilino {
 	private String nombreCompleto;

@@ -2,7 +2,7 @@ package tests;
 
 import java.time.LocalDate;
 
-import Ejemplos.Persona;
+import ejemplos.Persona;
 
 public class MainAlumnos {
 

@@ -1,11 +1,13 @@
-package Boletin8_1;
+package boletin8_1;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import Ejemplos.Persona;
+
+import ejemplos.Persona;
+
 import java.time.LocalDate;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;

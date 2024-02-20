@@ -1,8 +1,8 @@
-package Ejemplos;
+package ejemplos;
 
-import Vehiculos.Bicicleta;
 import modelo.Atleta;
 import modelo.Karateka;
+import vehiculos.Bicicleta;
 
 public class Main {
 

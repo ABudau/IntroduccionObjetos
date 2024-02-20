@@ -1,4 +1,4 @@
-package Boletin8_1;
+package boletin8_1;
 //Ejercicio 3: Implementa una clase Persona con los siguientes atributos
 //y métodos. Escribe una clase Main para poder probar la clase anterior donde
 //se pidan los datos por teclado de dos personas. Una persona se creará con el
