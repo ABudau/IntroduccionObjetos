@@ -20,11 +20,12 @@ public class EmbarcacionesDeportivasAMotor extends Barco {
 	public void setPotenciaCv(double potenciaCv) {
 		this.potenciaCv = potenciaCv;
 	}
-
-
+	
 	@Override
-	public double funcionModulo() {
-		return getEslora()*10+getPotenciaCv();
+	public double getPrecioAlquiler() {
+		return super.getPrecioAlquiler()+getPotenciaCv();
 	}
+	
+	
 
 }

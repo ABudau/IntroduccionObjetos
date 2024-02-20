@@ -2,13 +2,15 @@ package boletin8_2_1;
 
 import java.time.LocalDate;
 
-public class YatesLujo extends EmbarcacionesDeportivasAMotor {
+public class YatesLujo extends Barco {
 	private int numeroCamarotes;
+	private double potenciaCv;
 
-	public YatesLujo(String matricula, double eslora, LocalDate anioFabricacion, double potenciaCv,
-			int numeroCamarotes) {
-		super(matricula, eslora, anioFabricacion, potenciaCv);
+	public YatesLujo(String matricula, double eslora, LocalDate anioFabricacion, int numeroCamarotes,
+			double potenciaCv) {
+		super(matricula, eslora, anioFabricacion);
 		setNumeroCamarotes(numeroCamarotes);
+		setPotenciaCv(potenciaCv);
 	}
 
 	public int getNumeroCamarotes() {
@@ -21,18 +23,26 @@ public class YatesLujo extends EmbarcacionesDeportivasAMotor {
 		}
 		
 	}
+	
 
 	
 	
-	@Override
-	public double funcionModulo() {
-		return getEslora()*10+getPotenciaCv()+getNumeroCamarotes();
+	public double getPotenciaCv() {
+		return potenciaCv;
+	}
+
+	public void setPotenciaCv(double potenciaCv) {
+		if (potenciaCv>0) {
+			this.potenciaCv = potenciaCv;
+		}
+		
 	}
 
 	@Override
-	public String toString() {
-		return "YatesLujo [numeroCamarotes=" + numeroCamarotes + "]";
+	public double getPrecioAlquiler() {
+		return super.getPrecioAlquiler()+getPotenciaCv()+getNumeroCamarotes();
 	}
+
 	
 	
 	

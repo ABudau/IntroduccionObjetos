@@ -2,12 +2,14 @@ package boletin8_2_1;
 
 import java.time.LocalDate;
 
-public abstract class Barco {
+public class Barco {
 	private String matricula;
 	private double eslora;
 	private LocalDate anioFabricacion;
 	
 	public static final int VALOR_FIJO=800;
+	public static final int VALOR_ESLORA=10;
+	
 	public Barco(String matricula, double eslora, LocalDate anioFabricacion) {
 		super();
 		this.matricula = matricula;
@@ -38,7 +40,17 @@ public abstract class Barco {
 	public void setAnioFabricacion(LocalDate anioFabricacion) {
 		this.anioFabricacion = anioFabricacion;
 	}
-	abstract public double funcionModulo();
+	
+	public double funcionModulo() {
+		return getEslora()*VALOR_ESLORA;
+		
+	}
+	
+	public double getPrecioAlquiler() {
+
+		return funcionModulo()+VALOR_FIJO;
+
+	}
 
 	@Override
 	public String toString() {

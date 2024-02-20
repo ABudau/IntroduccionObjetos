@@ -27,16 +27,8 @@ public class Velero extends Barco {
 
 
 	@Override
-	public String toString() {
-		return "Velero [numeroMastiles=" + numeroMastiles + "]";
-	}
-
-
-
-	@Override
-	public double funcionModulo() {
-		
-		return getEslora()*10+getNumeroMastiles();
+	public double getPrecioAlquiler() {
+		return super.getPrecioAlquiler()+getNumeroMastiles();
 	}
 
 }

@@ -81,9 +81,13 @@ public class Main {
 		AlquilerBarco a2= new AlquilerBarco(c2.getNombre(), c2.getDni(), LocalDate.of(2024, 01, 01), LocalDate.of(2024, 1, 10), 05, embarcacion1);
 		AlquilerBarco a3= new AlquilerBarco(c1.getNombre(), c1.getDni(), LocalDate.of(2024, 01, 01), LocalDate.of(2024, 1, 10), 05, yate1);
 		
-		System.out.println(a1.getPrecioAlquiler());
-		System.out.println(a2.getPrecioAlquiler());
-		System.out.println(a3.getPrecioAlquiler());
+		System.out.println(v1.getPrecioAlquiler());
+		System.out.println(embarcacion1.getPrecioAlquiler());
+		System.out.println(yate1.getPrecioAlquiler());
+		System.out.println();
+		System.out.println(a1.getPrecioTotalAlquiler());
+		System.out.println(a2.getPrecioTotalAlquiler());
+		System.out.println(a3.getPrecioTotalAlquiler());
 		
 	}
 

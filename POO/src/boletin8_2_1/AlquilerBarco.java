@@ -2,7 +2,9 @@ package boletin8_2_1;
 
 import java.time.LocalDate;
 import static java.time.temporal.ChronoUnit.DAYS;
+
 public class AlquilerBarco {
+	
 	private String nombreCliente;
 	private String dniCliente;
 	private LocalDate fechaInicioAlquiler;
@@ -78,12 +80,16 @@ public class AlquilerBarco {
 		this.barco = barco;
 	}
 
-
-	public double getPrecioAlquiler() {
+/**
+ * Método que calcula el precio total del alquiler de un barco
+ * @return devuelve el precio total del alquiler 
+ */
+	public double getPrecioTotalAlquiler() {
 		double precio;
 		int dias=(int) DAYS.between(getFechaInicioAlquiler(), getFechaFinAlquiler())+1;
 
-		precio=dias*getBarco().funcionModulo()*Barco.VALOR_FIJO;
+		precio=dias*getBarco().getPrecioAlquiler();//multiplico los dias por el 
+													//precio del alquiler del barco
 
 		return precio;
 
