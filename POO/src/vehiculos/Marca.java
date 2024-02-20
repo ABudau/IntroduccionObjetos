@@ -1,4 +1,4 @@
-package Vehiculos;
+package vehiculos;
 
 public enum Marca {
 	FORD,

@@ -1,4 +1,4 @@
-package Vehiculos;
+package vehiculos;
 
 //ESTE MAIN ES DE LA BICICLETA
 public class Main {
