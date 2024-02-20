@@ -9,7 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 //		ejercicio1();
 //		ejercicio2();
-		ejercicio3();
+//		ejercicio3();
+		ejercicio4();
 	}
 	
 	
@@ -67,6 +68,22 @@ public class Main {
 		System.out.println(a1);
 		
 
+	}
+	private static void ejercicio4() {
+		Cliente c1= new Cliente("PEPE", "PEREZ", LocalDate.now(), "123455687H");
+		Cliente c2= new Cliente("Maria", "apellido1", LocalDate.now(), "123455687H");
+		
+		Velero v1=new Velero("1111HHH", 5.5, LocalDate.of(2013, 05, 04), 2);
+		EmbarcacionesDeportivasAMotor embarcacion1 = new EmbarcacionesDeportivasAMotor("1111HHH", 5.5, LocalDate.of(2013, 05, 04), 200);
+		YatesLujo yate1=new YatesLujo("1111HHH", 5.5, LocalDate.of(2013, 05, 04), 300,10);
+		
+		AlquilerBarco a1= new AlquilerBarco(c1.getNombre(), c1.getDni(), LocalDate.of(2024, 01, 01), LocalDate.of(2024, 1, 10), 05, v1);
+		AlquilerBarco a2= new AlquilerBarco(c2.getNombre(), c2.getDni(), LocalDate.of(2024, 01, 01), LocalDate.of(2024, 1, 10), 05, embarcacion1);
+		AlquilerBarco a3= new AlquilerBarco(c1.getNombre(), c1.getDni(), LocalDate.of(2024, 01, 01), LocalDate.of(2024, 1, 10), 05, yate1);
+		
+		System.out.println(a1.getPrecioAlquiler());
+		System.out.println(a2.getPrecioAlquiler());
+		System.out.println(a3.getPrecioAlquiler());
 	}
 
 }
