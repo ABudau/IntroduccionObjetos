@@ -84,6 +84,7 @@ public class Main {
 		System.out.println(a1.getPrecioAlquiler());
 		System.out.println(a2.getPrecioAlquiler());
 		System.out.println(a3.getPrecioAlquiler());
+		
 	}
 
 }
