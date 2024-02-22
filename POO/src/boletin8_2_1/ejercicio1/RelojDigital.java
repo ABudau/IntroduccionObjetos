@@ -1,4 +1,4 @@
-package boletin8_2_1;
+package boletin8_2_1.ejercicio1;
 
 import java.time.format.DateTimeFormatter;
 

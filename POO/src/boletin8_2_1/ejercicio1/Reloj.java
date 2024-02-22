@@ -1,4 +1,4 @@
-package boletin8_2_1;
+package boletin8_2_1.ejercicio1;
 
 
 import java.time.LocalTime;
@@ -70,7 +70,7 @@ public abstract class Reloj {
 	 * @param hora es la hora a la que se desea poner la alarma
 	 * @param minutos son los minutos que se desea poner la alarma
 	 */ 
-	protected void establecerAlarma(int hora,int minutos) {
+	public void establecerAlarma(int hora,int minutos) {
 
 		if (hora>=0&&hora<24&&minutos>0&&minutos<60) {
 			this.horaAlarma=LocalTime.of(hora, minutos);

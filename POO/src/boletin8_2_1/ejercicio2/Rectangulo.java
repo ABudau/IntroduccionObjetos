@@ -1,4 +1,4 @@
-package boletin8_2_1;
+package boletin8_2_1.ejercicio2;
 
 public class Rectangulo implements Figura {
 	private double largo;

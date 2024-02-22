@@ -1,4 +1,4 @@
-package boletin8_2_1;
+package boletin8_2_1.ejercicio2;
 
 public class Circulo implements Figura{
 	private double radio;

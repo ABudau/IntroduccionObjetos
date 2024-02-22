@@ -1,4 +1,4 @@
-package boletin8_2_1;
+package boletin8_2_1.ejercicio3;
 
 public class Pelicula extends Producto {
 	private Categoria categoria;

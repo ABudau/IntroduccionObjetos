@@ -4,13 +4,28 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+import boletin8_2_1.ejercicio1.RelojAnalogico;
+import boletin8_2_1.ejercicio1.RelojDigital;
+import boletin8_2_1.ejercicio2.Circulo;
+import boletin8_2_1.ejercicio2.Figura;
+import boletin8_2_1.ejercicio2.Figuras;
+import boletin8_2_1.ejercicio2.Rectangulo;
+import boletin8_2_1.ejercicio3.Alquiler;
+import boletin8_2_1.ejercicio3.Categoria;
+import boletin8_2_1.ejercicio3.Cliente;
+import boletin8_2_1.ejercicio3.Pelicula;
+import boletin8_2_1.ejercicio4.AlquilerBarco;
+import boletin8_2_1.ejercicio4.EmbarcacionesDeportivasAMotor;
+import boletin8_2_1.ejercicio4.Velero;
+import boletin8_2_1.ejercicio4.YatesLujo;
+
 public class Main {
 
 	public static void main(String[] args) {
 //		ejercicio1();
-//		ejercicio2();
+		ejercicio2();
 //		ejercicio3();
-		ejercicio4();
+//		ejercicio4();
 	}
 	
 	
@@ -54,7 +69,7 @@ public class Main {
 		f12[6]=c2;
 		f12[7]=c3;
 		f12[8]=c4;
-//		f12[9]=c5;
+		f12[9]=c5;
 		Figuras.setFigura(f12);
 		
 		System.out.println(Figuras.figuraConMasArea());
