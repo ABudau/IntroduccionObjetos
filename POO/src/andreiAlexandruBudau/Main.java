@@ -14,7 +14,7 @@ public class Main {
 		
 		Socio[]socios = new Socio[10];
 		socios[0]=s1;
-		socios[1]=socioF;
+		socios[1]=socioF; 
 		
 		Club.setSociosClub(socios);
 		
