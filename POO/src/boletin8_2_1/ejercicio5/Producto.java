@@ -6,8 +6,9 @@ public class Producto {
 	private double precioBase;
 	private Marca marca;
 	private static int contador=0;
+	public static final double IVA=1.21;//corresponde al 21%
 	
-	public Producto(int identificador, double cantidadLitros, double precioBase, Marca marca) {
+	public Producto(double cantidadLitros, double precioBase, Marca marca) {
 		super();
 		contador++;
 		this.identificador = contador;
@@ -46,11 +47,17 @@ public class Producto {
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
-
+	
+	public double getPrecioFinal() {
+		return getPrecioBase()*IVA;
+	}
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Producto [identificador=" + identificador + ", cantidadLitros=" + cantidadLitros + ", precioBase="
-				+ precioBase + ", marca=" + marca + "]";
+				+ precioBase + ", marca=" + marca + ", getPrecioFinal()=" + getPrecioFinal() + "]";
 	}
 	
 	
