@@ -81,9 +81,11 @@ public class SocioFundacional extends Socio {
 
 	@Override
 	public String toString() {
-		return "SocioFundacional [fechaInscripcion=" + fechaInscripcion + ", sociosInvitados="
-				+ Arrays.toString(sociosInvitados) + "]";
+		return "SocioFundacional [fechaInscripcion=" + fechaInscripcion + ", getNombreCompleto()=" + getNombreCompleto()
+				+ ", getNumeroSocio()=" + getNumeroSocio() + "]";
 	}
+
+	
 	
 	
 }

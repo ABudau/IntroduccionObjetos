@@ -42,7 +42,7 @@ public class Teclado {
 		boolean positivo=false;
 		do {
 //			System.out.println("Introduce un valor: ");//pido que se introduzca el radio
-			numero=teclado.nextInt();//recojo el valor y lo almaceno en la variable radio
+			numero=teclado.nextDouble();//recojo el valor y lo almaceno en la variable radio
 			if (numero<=0) {//si el radio es menor o igual a 0 
 				System.out.println("Error. El valor tiene que ser mayor que 0");//muestro el mensaje
 			}else {//si el radio es mayor que 0 

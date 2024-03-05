@@ -27,10 +27,11 @@ public class Main {
 //	System.out.println(Club.getReservasRealizadas()[1]);
 	
 	Club.mostrarReservasRealizadas();
+	System.out.println(socioFundancionalMasAntiguo());
 	
 	}
 	
-	public SocioFundacional socioFundancionalMasAntiguo() {
+	public static SocioFundacional socioFundancionalMasAntiguo() {
 		SocioFundacional socioMasAntiguo=null;
 		LocalDate fechaMasAntiguo=LocalDate.now();
 		
