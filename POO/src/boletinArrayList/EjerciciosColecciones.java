@@ -3,12 +3,15 @@ package boletinArrayList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 import boletinArrayList.ejercicio4.Empleado;
 import boletinArrayList.ejercicio5.Almacen;
 import boletinArrayList.ejercicio5.Menu;
 import boletinArrayList.ejercicio5.Producto;
 import boletinArrayList.ejercicio5.ProductoAlreadyExistsException;
+import boletinArrayList.ejercicio6.Baraja;
+import boletinArrayList.ejercicio6.Carta;
 import vehiculos.Teclado;
 
 public class EjerciciosColecciones {
@@ -19,7 +22,9 @@ public class EjerciciosColecciones {
 //		ejercicio2();
 //		ejercicio3();
 //		ejercicio4();
-		ejercicio5();
+//		ejercicio5();
+//		ejercicio6();
+		ejercicio7();
 
 	}
 	
@@ -403,8 +408,22 @@ public class EjerciciosColecciones {
 	ninguna.*/
 	
 	private static void ejercicio6() {
-		// TODO Auto-generated method stub
+		Baraja b1 = new Baraja();
+		b1.rellenarBaraja();
+		b1.mostrarCartas();
+		System.out.println(b1.escogerCartasAzar());
 
 	}
-	
+	private static void ejercicio7() {
+//		ejercicio6();
+		List<Carta> cartas= new ArrayList<Carta>();
+		Baraja b1 = new Baraja();
+		b1.rellenarBaraja();
+		b1.mostrarCartas();
+		cartas=b1.escogerCartasAzar();
+		System.out.println(cartas);
+		b1.ordenarCartasAleatorias(cartas);
+		System.out.println(cartas);
+		
+	}
 }
