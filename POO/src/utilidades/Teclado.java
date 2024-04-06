@@ -13,12 +13,12 @@ public class Teclado {
 	 * @version 1.0
 	 */
 	public static int pedirNumeroPositivo() {//función que pide un número positivo
-		Scanner teclado=new Scanner(System.in);
+//		Scanner teclado=new Scanner(System.in);
 		int numero;//declaro las variables
 		boolean positivo=false;
 		do {
 //			System.out.println("Introduce un valor: ");//pido que se introduzca el radio
-			numero=teclado.nextInt();//recojo el valor y lo almaceno en la variable radio
+			numero=pedirNumero();//recojo el valor y lo almaceno en la variable radio
 			if(numero<=0) {//si el radio es menor o igual a 0 
 				System.out.println("Error. El valor tiene que ser mayor que 0");//muestro el mensaje
 			}else {//si el radio es mayor que 0 
@@ -37,12 +37,11 @@ public class Teclado {
 	 * @version 1.0
 	 */
 	public static double pedirNumeroDecimalPositivo() {//función que pide un número positivo
-		Scanner teclado=new Scanner(System.in);
 		double numero;//declaro las variables
 		boolean positivo=false;
 		do {
 //			System.out.println("Introduce un valor: ");//pido que se introduzca el radio
-			numero=teclado.nextDouble();//recojo el valor y lo almaceno en la variable radio
+			numero=pedirNumeroDecimal();//recojo el valor y lo almaceno en la variable radio
 			if (numero<=0) {//si el radio es menor o igual a 0 
 				System.out.println("Error. El valor tiene que ser mayor que 0");//muestro el mensaje
 			}else {//si el radio es mayor que 0 
@@ -53,16 +52,15 @@ public class Teclado {
 		return numero;//devuelvo el valor de numero
 	}
 	/**
-	 * Método que pide un nombre por teclado
-	 * @return devuelve el nombre introducido
+	 * Método que pide una cadena por teclado
+	 * @return devuelve la cadena introducida
 	 * @author Budau_Andrei
 	 * @version 1.0
 	 */
 	public static String pedirCadena() {
 		Scanner teclado=new Scanner(System.in);
-//		System.out.println("Introduce un nombre ");
-		String nombre=teclado.nextLine();
-		return nombre;
+
+		return teclado.nextLine();
 	}
 	/**
 	 * Método que pide un caracter por teclado
@@ -72,15 +70,14 @@ public class Teclado {
 	 */
 	public static char pedirChar() {
 		Scanner teclado=new Scanner(System.in);
-//		System.out.println("Introduce un nombre ");
-		char nombre=teclado.nextLine().charAt(0);
-		return nombre;
+
+		return teclado.nextLine().charAt(0);
 	}
 	/**
 	 * Método que se encarga de rellenar un array
 	 * @param array es el array que se le pasa como parámetro para ser rellenado
 	 * @param contador es el parámetro que se le pasa para definir el tamaño del array
-	 * <br>pedirNombre() se encarga de recoger el nombre
+	 * <br>pedirCadena() se encarga de recoger el nombre
 	 * @author Budau_Andrei
 	 * @version 1.0
 	 */
@@ -111,7 +108,6 @@ public class Teclado {
 	 */
 	public static void mostrarArray(int array[]) {
 		for (int i = 0; i < array.length; i++) {
-//			System.out.print(i+"->");
 			System.out.print(array[i]+" ");
 		}
 
@@ -125,12 +121,11 @@ public class Teclado {
 	 * @version 1.0
 	 */
 	public static int recogerOpcionMenu(int n1,int n2) {//metodo que recoge la opcion del menu y la devuelve
-		Scanner teclado=new Scanner(System.in);
 		int opcion;//declaro la variable
 		boolean valido=false;
 		do {//inicio del bucle
 
-			opcion=teclado.nextInt();//recojo el valor introducido por teclado y lo almaceno en la variable opcion
+			opcion=pedirNumero();//recojo el valor introducido por teclado y lo almaceno en la variable opcion
 			if (opcion<n1||opcion>n2) {//si la opcion es menor que 1 
 				System.out.println("Error Escoge una opción correcta entre "+n1+" y "+n2);//muestro el mensaje
 
@@ -151,13 +146,12 @@ public class Teclado {
 	 * @author Budau_Andrei
 	 * @version 1.0
 	 */
-	public static int recogerValorValido(int n1,int n2) {//metodo que recoge la opcion del menu y la devuelve
-		Scanner teclado=new Scanner(System.in);
+	public static int recogerValorValido(int n1,int n2) {
 		int opcion;//declaro la variable
 		boolean valido=false;
 		do {//inicio del bucle
 
-			opcion=teclado.nextInt();//recojo el valor introducido por teclado y lo almaceno en la variable opcion
+			opcion=pedirNumero();//recojo el valor introducido por teclado y lo almaceno en la variable opcion
 			if (opcion<n1||opcion>n2) {//si la opcion es menor que 1 
 				System.out.println("Error. Escoge un valor válido entre "+n1+" y "+n2);//muestro el mensaje
 
@@ -268,5 +262,90 @@ public class Teclado {
 		return numero;
 	}
 	
+	/**
+	 * Método que se le pasa una cadena de texto y devuelve true si la cadena de texto 
+	 * se compone de letras o espacios. Si encuentra un número u otro caracter devuelve false
+	 * @param nombre es la cadena de texto a examinar
+	 * @return devuelve true si todo son letras o espacios, devuelve false si no es lo comentado
+	 * anteriormente
+	 * @author Budau
+	 */
 	
+	public static boolean comprobarNombre(String nombre) {
+		boolean valido=true;
+		
+		for (int i = 0; i < nombre.length()&&valido; i++) {
+			
+			if (!Character.isLetter(nombre.charAt(i))&&nombre.charAt(i)!=' ') {
+				valido=false;
+			}
+		}
+		return valido;
+	}
+	
+	/**
+	 * Método que pide un nombre(Cadena de texto) solo con letras
+	 * y espacios
+	 * @return devuelve una cadena de texto solo con letras y espacios
+	 */
+	public static String pedirNombre() {
+		String nombre=null;
+		do {
+			
+			System.out.println("Introduce nombre:");
+			nombre=Teclado.pedirCadena();
+			if (!comprobarNombre(nombre)) {
+				System.out.println("ERROR. EL NOMBRE NO PUEDE CONTENER NUMEROS O CARACTERES");
+			}
+		}while(!comprobarNombre(nombre));
+		return nombre;
+	}
+	private static int pedirNumeroAux() {
+		Scanner teclado= new Scanner(System.in);
+		return teclado.nextInt();
+	}
+	private static double pedirNumeroAuxDecimal() {
+		Scanner teclado= new Scanner(System.in);
+		return teclado.nextDouble();
+	}
+	/**
+	 * Método que recoge y controla que el valor que se
+	 * ha introducido es un número y devuelve el número 
+	 * introducido por teclado
+	 * @return devuelve el número introducido por teclado
+	 */
+	public static int pedirNumero() {
+		int numero = 0;
+		boolean valido;
+		do {//se repite hasta que el sueldo sea correcto/sea un número positivo
+			try {
+				numero=pedirNumeroAux();
+				valido=false;
+			}catch (Exception e) {//si el usuario introduce algun dato que no sean números, salta la excepcion
+				System.out.println("Error: INTRODUZCA UN NÚMERO");
+				valido=true;
+			}
+		}while(valido);
+		return numero;//devuelvo el sueldo correcto
+	}
+	/**
+	 * Método que recoge y controla que el valor que se
+	 * ha introducido es un número y devuelve el número 
+	 * introducido por teclado
+	 * @return devuelve el número introducido por teclado
+	 */
+	public static double pedirNumeroDecimal() {
+		double numero = 0;
+		boolean valido;
+		do {//se repite hasta que el sueldo sea correcto/sea un número positivo
+			try {
+				numero=pedirNumeroAuxDecimal();
+				valido=false;
+			}catch (Exception e) {//si el usuario introduce algun dato que no sean números, salta la excepcion
+				System.out.println("Error: INTRODUZCA UN NÚMERO");
+				valido=true;
+			}
+		}while(valido);
+		return numero;//devuelvo el sueldo correcto
+	}
 }

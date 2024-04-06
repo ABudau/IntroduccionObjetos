@@ -14,11 +14,18 @@ public class Teclado {
 	 */
 	public static int pedirNumeroPositivo() {//función que pide un número positivo
 		Scanner teclado=new Scanner(System.in);
-		int numero;//declaro las variables
-		boolean positivo=false;
+		int numero=-1;//declaro las variables
+		boolean positivo=false,valido=true;
 		do {
-//			System.out.println("Introduce un valor: ");//pido que se introduzca el radio
-			numero=teclado.nextInt();//recojo el valor y lo almaceno en la variable radio
+			try {
+				do {
+					numero=teclado.nextInt();//recojo el valor y lo almaceno en la variable
+				}while(!valido);
+			}catch (Exception e) {
+				System.out.println("ERROR. INTRODUCE UN NÚMERO");
+				valido=false;
+			}
+			
 			if(numero<=0) {//si el radio es menor o igual a 0 
 				System.out.println("Error. El valor tiene que ser mayor que 0");//muestro el mensaje
 			}else {//si el radio es mayor que 0 
@@ -27,6 +34,16 @@ public class Teclado {
 		}while(!positivo);
 
 		return numero;//devuelvo el valor de numero
+	}
+	/**
+	 * Método que pide un número entero por teclado.
+	 * @return devuelve el número 
+	 * @author Budau_Andrei
+	 * @version 1.0
+	 */
+	public static int pedirNumero() {//función que pide un número positivo
+		Scanner teclado=new Scanner(System.in);
+		return teclado.nextInt();//devuelvo el valor 
 	}
 	/**
 	 * Método que pide un número decimal por teclado. Comprueba si es mayor
@@ -60,9 +77,8 @@ public class Teclado {
 	 */
 	public static String pedirCadena() {
 		Scanner teclado=new Scanner(System.in);
-//		System.out.println("Introduce un nombre ");
-		String nombre=teclado.nextLine();
-		return nombre;
+
+		return teclado.nextLine();
 	}
 	/**
 	 * Método que pide un caracter por teclado
@@ -72,9 +88,7 @@ public class Teclado {
 	 */
 	public static char pedirChar() {
 		Scanner teclado=new Scanner(System.in);
-//		System.out.println("Introduce un nombre ");
-		char nombre=teclado.nextLine().charAt(0);
-		return nombre;
+		return teclado.nextLine().charAt(0);
 	}
 	/**
 	 * Método que se encarga de rellenar un array
@@ -109,9 +123,8 @@ public class Teclado {
 	 * @author Budau_Andrei
 	 * @version 1.0
 	 */
-	public static void mostrarArray(int array[]) {
+	public static void mostrarArrayEnteros(int array[]) {
 		for (int i = 0; i < array.length; i++) {
-//			System.out.print(i+"->");
 			System.out.print(array[i]+" ");
 		}
 
