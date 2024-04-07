@@ -35,7 +35,8 @@ public class Carta implements Comparable<Carta> {
 
 	@Override
 	public String toString() {
-		return "Carta [palo=" + palo + ", numero=" + numero + "]\n";
+//		return "Carta [palo=" + palo + ", numero=" + numero + "]\n";
+		return numero+" de "+palo+"\n";
 	}
 
 	@Override

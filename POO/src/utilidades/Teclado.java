@@ -245,14 +245,15 @@ public class Teclado {
 	 * Método que genera un número aleatorio y lo almacena dentro de un array y comprueba
 	 * que ese número no esté almacenado en ninguna posición, si está almacenado genera otro número
 	 * aleatorio de forma que el ciclo se repite hasta que se genera un número que no esté almacenado
-	 * @param numerosAleatorios es el array que se le pasa para buscar dentro el número
+	 * @param numerosAgenerar son la cantidad de numeros que queremos que se generen
 	 * @param min es el número minimo desde el que parte el rango de números a generar
 	 * @param max es el número máximo hasta el que llega el rango de números a generar
 	 * @return devuelve el número generado
 	 * @author Budau
 	 * @version 1.0
 	 */
-	public static int generarNumeroNoRepetido(int numerosAleatorios[],int min,int max) {
+	public static int generarNumeroNoRepetido(int numerosAgenerar,int min,int max) {
+		int numerosAleatorios[]= new int[numerosAgenerar];
 		int numero;//declaro las variables
 		boolean contains;
 		do {//ejecuto el do hasta que contains tenga un valor false

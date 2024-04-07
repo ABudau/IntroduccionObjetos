@@ -38,17 +38,17 @@ public class Baraja {
 			System.out.println(carta);
 		}
 	}
-	public List<Carta> escogerCartasAzar() {
+	public List<Carta> escogerCartasAzar(int numeroCartas) {
 		List<Carta>cartasAleatorias= new ArrayList<Carta>();
 //		this.getBaraja()
-		int numeroAleatorio=utilidades.Teclado.genearNumeroAleatorio(0, 39);
-		if (numeroAleatorio+10>this.getBaraja().size()) {
-			numeroAleatorio-=10;
-		}else if (numeroAleatorio-10<0) {
-			numeroAleatorio+=10;
+		int numeroAleatorio=utilidades.Teclado.genearNumeroAleatorio(0, this.getBaraja().size()-1);
+		if (numeroAleatorio+numeroCartas>=this.getBaraja().size()-1) {
+			numeroAleatorio-=numeroCartas;
+		}else if (numeroAleatorio-numeroCartas<0) {
+			numeroAleatorio+=numeroCartas;
 		}
 		Collections.shuffle(this.getBaraja());
-		cartasAleatorias=this.getBaraja().subList(numeroAleatorio, numeroAleatorio+10);
+		cartasAleatorias=this.getBaraja().subList(numeroAleatorio, numeroAleatorio+numeroCartas);
 		return cartasAleatorias;
 	}
 	public void ordenarCartasAleatorias(List<Carta>cartasAleatorias){

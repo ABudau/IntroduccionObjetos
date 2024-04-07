@@ -411,7 +411,7 @@ public class EjerciciosColecciones {
 		Baraja b1 = new Baraja();
 		b1.rellenarBaraja();
 		b1.mostrarCartas();
-		System.out.println(b1.escogerCartasAzar());
+		System.out.println(b1.escogerCartasAzar(10));
 
 	}
 	private static void ejercicio7() {
@@ -420,7 +420,7 @@ public class EjerciciosColecciones {
 		Baraja b1 = new Baraja();
 		b1.rellenarBaraja();
 		b1.mostrarCartas();
-		cartas=b1.escogerCartasAzar();
+		cartas=b1.escogerCartasAzar(10);
 		System.out.println(cartas);
 		b1.ordenarCartasAleatorias(cartas);
 		System.out.println(cartas);
